@@ -13,16 +13,21 @@
    * Contact Services Select logic
    */
   const services_select = document.querySelector("select");
-  services_select.addEventListener("change", handleChange);
+  if (services_select) {
+    services_select.addEventListener("change", handleChange);
+  };
 
   function handleChange(e) {
     const result = document.getElementById("contact-message");
     //console.log(e.target.value)
     if (e.target.value == "lessons") {
       result.setAttribute("required", true);
+      result.style.borderColor = "#18d26e";
     } else if (e.target.value != "lessons") {
       result.removeAttribute("required");
+      result.style.borderColor = "color-mix(in srgb, var(--default-color), transparent 80%)";
     }
+    result.focus();
   };
 
   //}

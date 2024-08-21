@@ -24,7 +24,7 @@
     <link href="javascripts/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
-    <%# <link href="stylesheets/main.css" rel="stylesheet"> %>
+    <!-- <link href="stylesheets/site.css" rel="stylesheet"> -->
 
     <!-- =======================================================
     * Template Name: Personal
@@ -35,10 +35,10 @@
     ======================================================== -->
     <title><%= current_page.data.title || "Brendon McDonnell" %></title>
     <%= stylesheet_link_tag "site" %>
-    <%# javascript_include_tag "site" %>
+    
   </head>
   <body class="<%= page_classes %>-page">
-    
+
     <%= partial "partials/header" %>
     <%= yield %>
     <%= partial "partials/footer" %>
@@ -62,6 +62,7 @@
     <script src="javascripts/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
     <!-- Main JS File -->
-    <script src="javascripts/main.js"></script>
+    <%= javascript_include_tag "main" %>
+    <%# <script src="javascripts/main.js"></script> %>
   </body>
 </html>
