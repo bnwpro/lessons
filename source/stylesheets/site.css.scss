@@ -1382,6 +1382,16 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+$form-select-font-size: 1em;
+$form-select-bg: black;
+$form-select-color: white;
+
+.contact .php-email-form select {
+  font-size: $form-select-font-size;
+  background-color: $form-select-bg;
+  color: $form-select-color;
+}
+
 .contact .info-item {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   padding: 20px 30px;
