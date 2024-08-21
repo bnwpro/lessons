@@ -10,6 +10,23 @@
   "use strict";
 
   /**
+   * Contact Services Select logic
+   */
+  const services_select = document.querySelector("select");
+  services_select.addEventListener("change", handleChange);
+
+  function handleChange(e) {
+    const result = document.getElementById("contact-message");
+    //console.log(e.target.value)
+    if (e.target.value == "lessons") {
+      result.setAttribute("required", true);
+    } else if (e.target.value != "lessons") {
+      result.removeAttribute("required");
+    }
+  };
+
+  //}
+  /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
   function toggleScrolled() {
