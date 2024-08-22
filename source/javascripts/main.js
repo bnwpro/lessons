@@ -33,11 +33,11 @@
    * HACK to get Menus to change Active State
    */
   function activateMenus() {
-    const currentURL = window.location.pathname;
+    const currentURL = window.location.pathname.split('/').pop();
     document.querySelectorAll(".navmenu a").forEach(navmenu => {
       navmenu.classList.remove('active');
     });
-    document.getElementById(currentURL).classList.toggle('active')
+    document.getElementById(currentURL).classList.add('active')
     //console.log(navmenu);
   };
   window.addEventListener('load', activateMenus);
