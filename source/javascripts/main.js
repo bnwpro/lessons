@@ -29,7 +29,18 @@
     }
     result.focus();
   };
-
+   /**
+   * HACK to get Menus to change Active State
+   */
+  function activateMenus() {
+    const currentURL = window.location.pathname;
+    document.querySelectorAll(".navmenu a").forEach(navmenu => {
+      navmenu.classList.remove('active');
+    });
+    document.getElementById(currentURL).classList.toggle('active')
+    //console.log(navmenu);
+  };
+  window.addEventListener('load', activateMenus);
   //}
   /**
    * Apply .scrolled class to the body as the page is scrolled down
