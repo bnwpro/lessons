@@ -4,7 +4,7 @@
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
-
+set :http_prefix, "./"
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
@@ -40,7 +40,7 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript, compressor: Terser.new
-# end
+configure :build do
+  activate :minify_css
+  activate :minify_javascript, compressor: Terser.new
+end

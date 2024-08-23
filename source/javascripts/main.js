@@ -34,12 +34,17 @@
    */
   function activateMenus() {
     const currentURL = window.location.pathname.split('/').pop();
-    document.querySelectorAll(".navmenu a").forEach(navmenu => {
-      navmenu.classList.remove('active');
-    });
-    document.getElementById(currentURL).classList.add('active')
-    //console.log(navmenu);
-  };
+    if (currentURL === '') {
+      document.getElementById('index.html').classList.add('active');
+      console.log('No Path')
+    } else {
+      document.querySelectorAll(".navmenu a").forEach(navmenu => {
+        navmenu.classList.remove('active');
+      });
+      document.getElementById(currentURL).classList.add('active')
+      console.log(currentURL);
+    }
+  }
   window.addEventListener('load', activateMenus);
   //}
   /**
