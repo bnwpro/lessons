@@ -12,11 +12,6 @@
   /**
    * Contact Services Select logic
    */
-  const services_select = document.querySelector("select");
-  if (services_select) {
-    services_select.addEventListener("change", handleChange);
-  };
-
   function handleChange(e) {
     const result = document.getElementById("contact-message");
     //console.log(e.target.value)
@@ -28,25 +23,34 @@
       result.style.borderColor = "color-mix(in srgb, var(--default-color), transparent 80%)";
     }
     result.focus();
+  }
+
+  const services_select = document.querySelector("select");
+  if (services_select) {
+    services_select.addEventListener("change", handleChange);
   };
    /**
    * HACK to get Menus to change Active State
    */
   function activateMenus() {
     const currentURL = window.location.pathname.split('/').pop();
-    if (currentURL === '') {
+    if (!currentURL) {// Add active class to initial page load without path in URL
       document.getElementById('index.html').classList.add('active');
       console.log('No Path')
     } else {
       document.querySelectorAll(".navmenu a").forEach(navmenu => {
         navmenu.classList.remove('active');
       });
-      document.getElementById(currentURL).classList.add('active')
+      if (document.getElementById(currentURL)) {// Don't try to add active class to page that's not in the Main Menu
+        //console.log(this.parentNode);
+        document.getElementById(currentURL).classList.add('active')// DRY: Refactor to grab existing reference in above conditional
+      }
       console.log(currentURL);
     }
   }
+
   window.addEventListener('load', activateMenus);
-  //}
+
   /**
    * Apply .scrolled class to the body as the page is scrolled down
    */
