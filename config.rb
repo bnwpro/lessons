@@ -5,6 +5,7 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 set :http_prefix, "./"
+# set :partials_dir, "partials"
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 

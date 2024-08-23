@@ -13,16 +13,16 @@
    * Contact Services Select logic
    */
   function handleChange(e) {
-    const result = document.getElementById("contact-message");
+    const messageArea = document.getElementById("contact-message");
     //console.log(e.target.value)
     if (e.target.value == "lessons") {
-      result.setAttribute("required", true);
-      result.style.borderColor = "#18d26e";
+      messageArea.setAttribute("required", true);
+      messageArea.style.borderColor = "#18d26e";
     } else if (e.target.value != "lessons") {
-      result.removeAttribute("required");
-      result.style.borderColor = "color-mix(in srgb, var(--default-color), transparent 80%)";
+      messageArea.removeAttribute("required");
+      messageArea.style.borderColor = "color-mix(in srgb, var(--default-color), transparent 80%)";
     }
-    result.focus();
+    messageArea.focus();
   }
 
   const services_select = document.querySelector("select");
@@ -35,8 +35,9 @@
   function activateMenus() {
     const currentURL = window.location.pathname.split('/').pop();
     if (!currentURL) {// Add active class to initial page load without path in URL
-      document.getElementById('index.html').classList.add('active');
+      //document.getElementById('index.html').classList.add('active');
       console.log('No Path')
+      return;
     } else {
       document.querySelectorAll(".navmenu a").forEach(navmenu => {
         navmenu.classList.remove('active');
