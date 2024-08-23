@@ -25,7 +25,7 @@
     messageArea.focus();
   }
 
-  const services_select = document.querySelector("select");
+  const services_select = document.querySelector(".services-select");
   if (services_select) {
     services_select.addEventListener("change", handleChange);
   };
