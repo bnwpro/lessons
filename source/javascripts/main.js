@@ -28,7 +28,7 @@
   const services_select = document.querySelector(".services-select");
   if (services_select) {
     services_select.addEventListener("change", handleChange);
-  };
+  }
    /**
    * HACK to get Menus to change Active State
    */
@@ -36,7 +36,7 @@
     const currentURL = window.location.pathname.split('/').pop();
     if (!currentURL) {// Add active class to initial page load without path in URL
       //document.getElementById('index.html').classList.add('active');
-      console.log('No Path')
+      console.log('No Path');
       return;
     } else {
       document.querySelectorAll(".navmenu a").forEach(navmenu => {
